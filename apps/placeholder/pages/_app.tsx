@@ -1,6 +1,6 @@
 import './styles.css';
 
-import { AppLayout, LayoutProvider } from '@placeholder/feature/layout';
+import { LayoutFeature } from '@placeholder/feature/layout';
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -13,11 +13,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to placeholder!</title>
       </Head>
       <Providers>
-        <LayoutProvider>
-          <AppLayout>
-            <Component {...pageProps} />
-          </AppLayout>
-        </LayoutProvider>
+        <LayoutFeature>
+          <Component {...pageProps} />
+        </LayoutFeature>
       </Providers>
     </>
   );
@@ -33,7 +31,6 @@ const Providers = buildProvidersTree([
       disableTransitionOnChange: true,
     },
   ],
-  [LayoutProvider, {}],
 ]);
 
 // move this somewhere more shareable

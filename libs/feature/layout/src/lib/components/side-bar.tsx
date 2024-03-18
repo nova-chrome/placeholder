@@ -2,9 +2,9 @@ import { cn } from '@placeholder/ui-kit/util';
 import { ArrowLeft } from 'lucide-react';
 import React from 'react';
 
-import { useLayout } from './layout.context';
+import { useLayout } from '../context/layout.context';
 
-export const LayoutSidebar: React.FC<React.PropsWithChildren<unknown>> = ({
+export const LayoutSideBar: React.FC<React.PropsWithChildren<unknown>> = ({
   children,
 }) => {
   const { isSidebarOpen, toggleSidebar } = useLayout();
@@ -27,7 +27,7 @@ export const LayoutSidebar: React.FC<React.PropsWithChildren<unknown>> = ({
         )}
         onClick={handleToggle}
       />
-      <div className="space-y-4 py-4">
+      <div className="py-4 space-y-4">
         <div className="px-3 py-2">
           <div className="mt-3 space-y-1">{children}</div>
         </div>

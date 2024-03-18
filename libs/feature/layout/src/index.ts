@@ -1,7 +1,2 @@
-export { AppLayout } from './lib/layout';
-export {
-  LayoutContext,
-  LayoutProvider,
-  LayoutState,
-  useLayout,
-} from './lib/layout.context';
+export { LayoutFeature } from './lib/layout';
+export { LayoutState, useLayout } from './lib/context/layout.context';

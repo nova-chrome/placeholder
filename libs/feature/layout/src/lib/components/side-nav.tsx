@@ -3,10 +3,10 @@ import { cn } from '@placeholder/ui-kit/util';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { useLayout } from './layout.context';
-import { NAV_ITEMS } from './nav-items';
+import { NAV_ITEMS } from '../constants/nav-items';
+import { useLayout } from '../context/layout.context';
 
-export const LayoutSidenav = () => {
+export const LayoutSideNav = () => {
   const path = usePathname();
   const { isSidebarOpen } = useLayout();
 
