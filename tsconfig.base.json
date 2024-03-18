@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@placeholder/ui-kit/ui": ["libs/ui-kit/ui/src/index.ts"],
-      "@placeholder/ui-kit/ui/server": ["libs/ui-kit/ui/src/server.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
