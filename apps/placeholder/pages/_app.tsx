@@ -1,4 +1,5 @@
 import './styles.css';
+import 'reflect-metadata';
 
 import { LayoutFeature } from '@placeholder/feature/layout';
 import { ThemeProvider } from 'next-themes';
