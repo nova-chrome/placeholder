@@ -13,6 +13,9 @@ module.exports = function buildConfig(appDir) {
       ...createGlobPatternsForDependencies(appDir),
     ],
     theme: {
+      container: {
+        center: true,
+      },
       extend: {
         colors: {
           border: 'hsl(var(--border))',
