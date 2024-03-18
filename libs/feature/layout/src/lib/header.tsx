@@ -1,9 +1,8 @@
 import { ThemeToggle } from '@placeholder/ui-kit/ui';
 import { Boxes } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
 
-export default function Header() {
+export const Header = () => {
   return (
     <div className="fixed left-0 right-0 top-0 z-20 border-b bg-background">
       <nav className="flex h-16 items-center justify-between px-4">
@@ -16,4 +15,4 @@ export default function Header() {
       </nav>
     </div>
   );
-}
+};

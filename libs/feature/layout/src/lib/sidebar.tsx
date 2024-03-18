@@ -2,28 +2,28 @@ import { cn } from '@placeholder/ui-kit/util';
 import { ArrowLeft } from 'lucide-react';
 import React from 'react';
 
-import { useSidebar } from './sidebar.context';
+import { useLayout } from './layout.context';
 
-export default function Sidebar({
+export const LayoutSidebar: React.FC<React.PropsWithChildren<unknown>> = ({
   children,
-}: React.PropsWithChildren<unknown>) {
-  const { isOpen, toggleOpen } = useSidebar();
+}) => {
+  const { isSidebarOpen, toggleSidebar } = useLayout();
 
   const handleToggle = () => {
-    toggleOpen((prev) => !prev);
+    toggleSidebar((prev) => !prev);
   };
 
   return (
     <nav
       className={cn(
         `relative h-screen border-r pt-20 duration-500`,
-        isOpen ? 'w-72' : 'w-[78px]'
+        isSidebarOpen ? 'w-72' : 'w-[78px]'
       )}
     >
       <ArrowLeft
         className={cn(
           'absolute -right-3 top-20 cursor-pointer rounded-full border bg-background text-3xl text-foreground',
-          !isOpen && 'rotate-180'
+          !isSidebarOpen && 'rotate-180'
         )}
         onClick={handleToggle}
       />
@@ -34,4 +34,4 @@ export default function Sidebar({
       </div>
     </nav>
   );
-}
+};

@@ -1,11 +1,9 @@
 import './styles.css';
 
+import { AppLayout, LayoutProvider } from '@placeholder/feature/layout';
+import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-
-import { AppLayout } from '../components/layout';
-import { ThemeProvider } from '../components/providers';
-import { SidebarProvider } from '../components/sidebar/sidebar.context';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,11 +17,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
         enableSystem
         disableTransitionOnChange
       >
-        <SidebarProvider>
+        <LayoutProvider>
           <AppLayout>
             <Component {...pageProps} />
           </AppLayout>
-        </SidebarProvider>
+        </LayoutProvider>
       </ThemeProvider>
     </>
   );
