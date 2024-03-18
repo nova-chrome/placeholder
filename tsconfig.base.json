@@ -28,6 +28,8 @@
       "@placeholder/feature/layout/server": [
         "libs/feature/layout/src/server.ts"
       ],
+      "@placeholder/feature/todos": ["libs/feature/todos/src/index.ts"],
+      "@placeholder/feature/todos/server": ["libs/feature/todos/src/server.ts"],
       "@placeholder/model/todo": ["libs/model/todo/src/index.ts"],
       "@placeholder/ui-kit/ui": ["libs/ui-kit/ui/src/index.ts"],
       "@placeholder/ui-kit/util": ["libs/ui-kit/util/src/index.ts"]
