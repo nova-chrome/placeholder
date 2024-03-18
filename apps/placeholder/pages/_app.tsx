@@ -6,8 +6,10 @@ import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
+import { Provider } from 'react-redux';
 
 import { bindDependencies } from '../lib/bind-dependencies';
+import { store } from '../lib/store';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   bindDependencies();
@@ -26,6 +28,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
 }
 
 const Providers = buildProvidersTree([
+  [Provider, { store }],
   [
     ThemeProvider,
     {
