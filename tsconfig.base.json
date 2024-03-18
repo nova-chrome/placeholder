@@ -18,6 +18,9 @@
       "@placeholder/core/dependency-injection": [
         "libs/core/dependency-injection/src/index.ts"
       ],
+      "@placeholder/data-access/todo-state": [
+        "libs/data-access/todo-state/src/index.ts"
+      ],
       "@placeholder/feature/layout": ["libs/feature/layout/src/index.ts"],
       "@placeholder/feature/layout/server": [
         "libs/feature/layout/src/server.ts"
