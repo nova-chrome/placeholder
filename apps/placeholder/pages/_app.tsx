@@ -7,7 +7,10 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 
+import { bindDependencies } from '../lib/bind-dependencies';
+
 function CustomApp({ Component, pageProps }: AppProps) {
+  bindDependencies();
   return (
     <>
       <Head>
