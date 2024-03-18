@@ -2,6 +2,16 @@ import {
   todoSelectors,
   todoUiActions,
 } from '@placeholder/data-access/todo-state';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@placeholder/ui-kit/ui';
+import { Check, X } from 'lucide-react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -13,5 +23,29 @@ export default function TodoPage() {
     dispatch(todoUiActions.todoPageEntered());
   }, []);
 
-  return <>{JSON.stringify(todos, null, 2)}</>;
+  return (
+    <Table>
+      <TableCaption>A list of your recent todos.</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-[100px]">ID</TableHead>
+          <TableHead>Title</TableHead>
+          <TableHead className="text-right">Completed</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {todos.map((todo) => {
+          return (
+            <TableRow key={todo.id + todo.userId + todo.title}>
+              <TableCell className="font-medium">{todo.id}</TableCell>
+              <TableCell>{todo.title}</TableCell>
+              <TableCell className="flex justify-end">
+                {todo.completed ? <Check /> : <X />}
+              </TableCell>
+            </TableRow>
+          );
+        })}
+      </TableBody>
+    </Table>
+  );
 }
