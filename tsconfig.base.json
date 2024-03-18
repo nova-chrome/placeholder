@@ -18,6 +18,9 @@
       "@placeholder/core/dependency-injection": [
         "libs/core/dependency-injection/src/index.ts"
       ],
+      "@placeholder/data-access/todo-infrastructure": [
+        "libs/data-access/todo-infrastructure/src/index.ts"
+      ],
       "@placeholder/data-access/todo-state": [
         "libs/data-access/todo-state/src/index.ts"
       ],
