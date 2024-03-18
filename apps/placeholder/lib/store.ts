@@ -1,20 +1,17 @@
-import {
-  combineReducers,
-  configureStore,
-  createReducer,
-} from '@reduxjs/toolkit';
+import { todoEffects, todoSlice } from '@placeholder/data-access/todo-state';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import { all } from 'redux-saga/effects';
+import { all, call } from 'redux-saga/effects';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const rootEffect = function* () {
-  yield all([]);
+  yield all([call(todoEffects)]);
 };
 
 export const store = configureStore({
   reducer: combineReducers({
-    test: createReducer({}, (wat) => wat),
+    todos: todoSlice.reducer,
   }),
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sagaMiddleware),
