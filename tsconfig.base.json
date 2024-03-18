@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@placeholder/core/dependency-injection": [
+        "libs/core/dependency-injection/src/index.ts"
+      ],
       "@placeholder/feature/layout": ["libs/feature/layout/src/index.ts"],
       "@placeholder/feature/layout/server": [
         "libs/feature/layout/src/server.ts"
