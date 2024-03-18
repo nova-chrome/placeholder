@@ -1,10 +1,10 @@
-const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
-const { join } = require('node:path');
-const TailwindAnimate = require('tailwindcss-animate');
+const { createGlobPatternsForDependencies } = require('@nx/next/tailwind');
+const { join } = require('path');
 
-module.exports = function buildConfig(appDir) {
+function buildConfig(appDir) {
   /** @type {import('tailwindcss').Config} */
   return {
+    darkMode: ['class'],
     content: [
       join(
         appDir,
@@ -15,6 +15,10 @@ module.exports = function buildConfig(appDir) {
     theme: {
       container: {
         center: true,
+        padding: '2rem',
+        screens: {
+          '2xl': '1400px',
+        },
       },
       extend: {
         colors: {
@@ -73,6 +77,8 @@ module.exports = function buildConfig(appDir) {
         },
       },
     },
-    plugins: [TailwindAnimate],
+    plugins: [require('tailwindcss-animate')],
   };
-};
+}
+
+module.exports = { buildConfig };
