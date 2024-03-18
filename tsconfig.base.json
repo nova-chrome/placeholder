@@ -19,6 +19,7 @@
       "@placeholder/feature/layout/server": [
         "libs/feature/layout/src/server.ts"
       ],
+      "@placeholder/model/todo": ["libs/model/todo/src/index.ts"],
       "@placeholder/ui-kit/ui": ["libs/ui-kit/ui/src/index.ts"],
       "@placeholder/ui-kit/util": ["libs/ui-kit/util/src/index.ts"]
     }
