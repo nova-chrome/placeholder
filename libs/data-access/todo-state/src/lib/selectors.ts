@@ -10,3 +10,8 @@ export const selectAll = createSelector(
   featureSelector,
   todoSelectors.selectAll
 );
+
+export const selectTotal = createSelector(
+  featureSelector,
+  (state) => state.total
+);

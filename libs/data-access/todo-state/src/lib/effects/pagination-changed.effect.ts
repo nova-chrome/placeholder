@@ -5,13 +5,13 @@ import {
 } from '@placeholder/model/todo';
 import { call, put, takeEvery } from 'redux-saga/effects';
 
-import { todoPageDataFetchedSuccess } from '../actions/api.actions';
-import { todoPageEntered } from '../actions/ui.actions';
+import { todoTablePaginationChangedSuccess } from '../actions/api.actions';
+import { todoTablePaginationChanged } from '../actions/ui.actions';
 
-export function* todoPageEnteredEffect() {
+export function* todoTablePaginationChangedEffect() {
   yield takeEvery(
-    todoPageEntered.type,
-    function* (action: ReturnType<typeof todoPageEntered>) {
+    todoTablePaginationChanged.type,
+    function* (action: ReturnType<typeof todoTablePaginationChanged>) {
       const todoService = diContainer.get<ITodoRepository>(
         TODO_REPOSITORY_TOKEN
       );
@@ -19,7 +19,7 @@ export function* todoPageEnteredEffect() {
       const response: Awaited<ReturnType<ITodoRepository['findAll']>> =
         yield call(todoService.findAll, action.payload);
 
-      yield put(todoPageDataFetchedSuccess(response));
+      yield put(todoTablePaginationChangedSuccess(response));
     }
   );
 }
