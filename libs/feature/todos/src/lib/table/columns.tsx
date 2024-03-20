@@ -1,7 +1,8 @@
 import { Todo } from '@placeholder/model/todo';
-import { Button } from '@placeholder/ui-kit/ui';
+import { DataTableColumnHeader } from '@placeholder/ui-kit/ui';
 import { ColumnDef } from '@tanstack/react-table';
-import { ArrowUpDown, Check, X } from 'lucide-react';
+import { Check, X } from 'lucide-react';
+import Link from 'next/link';
 
 export const COLUMNS: ColumnDef<Todo>[] = [
   {
@@ -11,14 +12,11 @@ export const COLUMNS: ColumnDef<Todo>[] = [
   {
     accessorKey: 'title',
     header: ({ column }) => {
+      return <DataTableColumnHeader column={column} title="Title" />;
+    },
+    cell: ({ row }) => {
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-        >
-          Title
-          <ArrowUpDown className="w-4 h-4 ml-2" />
-        </Button>
+        <Link href={row.original.id.toString()}>{row.original.title}</Link>
       );
     },
   },

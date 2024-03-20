@@ -1,5 +1,7 @@
+import { todoUiActions } from '@placeholder/data-access/todo-state';
 import {
-  Button,
+  DataTablePagination,
+  DataTableViewOptions,
   Input,
   Table,
   TableBody,
@@ -9,61 +11,74 @@ import {
   TableRow,
 } from '@placeholder/ui-kit/ui';
 import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from '@radix-ui/react-dropdown-menu';
-import {
   ColumnDef,
   ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
-  getPaginationRowModel,
   getSortedRowModel,
+  PaginationState,
   SortingState,
   useReactTable,
-  VisibilityState,
 } from '@tanstack/react-table';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  total?: number;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  total,
 }: DataTableProps<TData, TValue>) {
+  const dispatch = useDispatch();
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
 
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
+  const [pagination, setPagination] = React.useState<PaginationState>({
+    pageIndex: 0,
+    pageSize: 10,
+  });
 
   const table = useReactTable({
-    data,
+    data: data.slice(
+      pagination.pageIndex * pagination.pageSize,
+      (pagination.pageIndex + 1) * pagination.pageSize
+    ),
     columns,
+    pageCount: Math.ceil((total ?? data.length) / pagination.pageSize),
+    manualPagination: true,
+    rowCount: total ?? data.length,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
+    onPaginationChange: setPagination,
     state: {
       sorting,
       columnFilters,
-      columnVisibility,
+      pagination,
     },
   });
 
+  React.useEffect(() => {
+    dispatch(
+      todoUiActions.todoTablePaginationChanged({
+        pageIndex: pagination.pageIndex + 1,
+        pageSize: pagination.pageSize,
+      })
+    );
+  }, [pagination]);
+
   return (
-    <div>
+    <>
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter Todos..."
@@ -74,32 +89,7 @@ export function DataTable<TData, TValue>({
           className="max-w-sm"
         />
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Columns
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <DataTableViewOptions table={table} />
       </div>
       <div className="border rounded-md">
         <Table>
@@ -152,23 +142,8 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
       <div className="flex items-center justify-end py-4 space-x-2">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
+        <DataTablePagination table={table} />
       </div>
-    </div>
+    </>
   );
 }
