@@ -16,13 +16,13 @@ export const LayoutSideBar: React.FC<React.PropsWithChildren<unknown>> = ({
   return (
     <nav
       className={cn(
-        `relative h-screen border-r pt-20 duration-500`,
+        `relative h-screen border-r pt-12 duration-500`,
         isSidebarOpen ? 'w-72' : 'w-[78px]'
       )}
     >
       <ArrowLeft
         className={cn(
-          'absolute -right-3 top-20 cursor-pointer rounded-full border bg-background text-3xl text-foreground',
+          'absolute z-50 -right-3 top-24 cursor-pointer rounded-full border bg-background text-3xl text-foreground',
           !isSidebarOpen && 'rotate-180'
         )}
         onClick={handleToggle}
