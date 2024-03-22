@@ -1,4 +1,5 @@
 export * from './lib/button';
+export * from './lib/card';
 export * from './lib/checkbox';
 export * from './lib/data-table/data-table-column-header';
 export * from './lib/data-table/data-table-pagination';
