@@ -14,3 +14,4 @@ export * from './lib/table';
 export * from './lib/tailwind-indicator';
 export * from './lib/theme-toggle';
 export * from './lib/tooltip';
+export * from './lib/truncate-tooltip';
