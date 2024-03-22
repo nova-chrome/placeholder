@@ -20,10 +20,10 @@ export const TodoFeature = () => {
 
   return (
     <div className="flex flex-col gap-3 mx-auto mt-5 lg:flex-row">
-      <div className="order-1 w-full lg:w-1/2 lg:order-2">
+      <div className="order-1 w-full lg:w-1/3 lg:order-2">
         <CreateTodoCard />
       </div>
-      <div className="order-2 w-full lg:w-1/2 lg:order-1">
+      <div className="order-2 w-full lg:w-2/3 lg:order-1">
         <DataTable data={todos} columns={COLUMNS} total={total} />
       </div>
     </div>
