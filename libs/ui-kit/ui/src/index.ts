@@ -11,5 +11,6 @@ export * from './lib/scroll-area';
 export * from './lib/select';
 export * from './lib/sheet';
 export * from './lib/table';
+export * from './lib/tailwind-indicator';
 export * from './lib/theme-toggle';
 export * from './lib/tooltip';
