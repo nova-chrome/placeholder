@@ -1,6 +1,7 @@
 import { cn } from '@placeholder/ui-kit/util';
 import { ArrowLeft } from 'lucide-react';
 import React from 'react';
+import { useHotkeys } from 'react-hotkeys-hook';
 
 import { useLayout } from '../context/layout.context';
 
@@ -12,6 +13,8 @@ export const LayoutSideBar: React.FC<React.PropsWithChildren<unknown>> = ({
   const handleToggle = () => {
     toggleSidebar((prev) => !prev);
   };
+
+  useHotkeys('ctrl+b, meta+b', () => handleToggle());
 
   return (
     <nav
