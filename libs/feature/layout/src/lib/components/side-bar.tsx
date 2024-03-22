@@ -21,11 +21,13 @@ export const LayoutSideBar: React.FC<React.PropsWithChildren<unknown>> = ({
       )}
     >
       <ArrowLeft
+        tabIndex={0}
         className={cn(
-          'absolute z-50 -right-3 top-24 cursor-pointer rounded-full border bg-background text-3xl text-foreground',
+          'absolute z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 -right-3 top-24 cursor-pointer rounded-full border bg-background text-3xl text-foreground',
           !isSidebarOpen && 'rotate-180'
         )}
         onClick={handleToggle}
+        onKeyUp={(e) => e.key === 'Enter' && handleToggle()}
       />
       <div className="py-4 space-y-4">
         <div className="px-3 py-2">
