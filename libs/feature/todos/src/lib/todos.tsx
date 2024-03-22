@@ -5,8 +5,9 @@ import {
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { COLUMNS } from './table/columns';
-import { DataTable } from './table/data-table';
+import { COLUMNS } from './columns';
+import { CreateTodoCard } from './create-todo-card';
+import { DataTable } from './data-table';
 
 export const TodoFeature = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,13 @@ export const TodoFeature = () => {
   }, []);
 
   return (
-    <div className="mt-5">
-      <DataTable data={todos} columns={COLUMNS} total={total} />
+    <div className="flex flex-col gap-3 mx-auto mt-5 lg:flex-row">
+      <div className="order-1 w-full lg:w-1/2 lg:order-2">
+        <CreateTodoCard />
+      </div>
+      <div className="order-2 w-full lg:w-1/2 lg:order-1">
+        <DataTable data={todos} columns={COLUMNS} total={total} />
+      </div>
     </div>
   );
 };
