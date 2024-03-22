@@ -50,7 +50,7 @@ export const COLUMNS: ColumnDef<Todo>[] = [
               >
                 <div
                   ref={textElementRef}
-                  className="w-11/12 overflow-hidden whitespace-nowrap text-ellipsis"
+                  className="w-[225px] sm:w-[350px] md:w-[465px] overflow-hidden whitespace-nowrap text-ellipsis"
                 >
                   {row.original.title}
                 </div>

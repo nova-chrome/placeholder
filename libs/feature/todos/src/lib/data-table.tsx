@@ -8,6 +8,7 @@ import {
   DataTableViewOptions,
   Input,
   ScrollArea,
+  ScrollBar,
   Table,
   TableBody,
   TableCell,
@@ -85,7 +86,7 @@ export function DataTable<TData, TValue>({
   return (
     <Card>
       <CardHeader className="py-2">
-        <div className="flex items-center py-4">
+        <div className="flex items-center justify-between gap-3 py-4">
           <Input
             placeholder="Filter Todos..."
             value={(table.getColumn('title')?.getFilterValue() as string) ?? ''}
@@ -148,6 +149,8 @@ export function DataTable<TData, TValue>({
               )}
             </TableBody>
           </Table>
+          <ScrollBar orientation="horizontal" />
+          <ScrollBar orientation="vertical" />
         </ScrollArea>
       </CardContent>
       <CardFooter className="flex items-center justify-end py-4 space-x-2">
