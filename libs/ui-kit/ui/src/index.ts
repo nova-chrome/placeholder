@@ -5,6 +5,7 @@ export * from './lib/data-table/data-table-pagination';
 export * from './lib/data-table/data-table-view-options';
 export * from './lib/dropdown-menu';
 export * from './lib/input';
+export * from './lib/scroll-area';
 export * from './lib/select';
 export * from './lib/sheet';
 export * from './lib/table';
