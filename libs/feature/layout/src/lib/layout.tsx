@@ -1,3 +1,4 @@
+import { TailwindIndicator } from '@placeholder/ui-kit/ui';
 import React from 'react';
 
 import { LayoutHeader } from './components/header';
@@ -19,6 +20,7 @@ export const LayoutFeature = ({ children }: React.PropsWithChildren) => {
           </div>
         </main>
       </div>
+      <TailwindIndicator />
     </LayoutProvider>
   );
 };
