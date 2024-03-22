@@ -100,7 +100,7 @@ export function DataTable<TData, TValue>({
         </div>
       </CardHeader>
       <CardContent>
-        <ScrollArea className="border rounded h-[455px] w-full">
+        <ScrollArea className="border rounded h-[565px] w-full">
           <Table>
             <TableHeader className="sticky top-0">
               {table.getHeaderGroups().map((headerGroup) => (

@@ -1,14 +1,12 @@
 import { Todo } from '@placeholder/model/todo';
 import {
+  Button,
+  Checkbox,
   DataTableColumnHeader,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
+  TruncateTooltip,
 } from '@placeholder/ui-kit/ui';
-import { ColumnDef } from '@tanstack/react-table';
-import { Check, X } from 'lucide-react';
-import Link from 'next/link';
+import { ColumnDef, Row } from '@tanstack/react-table';
+import { X } from 'lucide-react';
 import React from 'react';
 
 export const COLUMNS: ColumnDef<Todo>[] = [
@@ -18,63 +16,43 @@ export const COLUMNS: ColumnDef<Todo>[] = [
   },
   {
     accessorKey: 'title',
+    enableHiding: false,
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Title" />
     ),
-    cell: function Cell({ row }) {
-      const [isOverflowed, setIsOverflow] = React.useState(false);
-      const textElementRef = React.useRef<HTMLDivElement | null>(null);
-
-      React.useEffect(() => {
-        const compareSize = () => {
-          if (textElementRef.current) {
-            const compare =
-              textElementRef.current.scrollWidth >
-              textElementRef.current.clientWidth;
-
-            setIsOverflow(compare);
-          }
-        };
-        compareSize();
-        window.addEventListener('resize', compareSize);
-        return () => window.removeEventListener('resize', compareSize);
-      }, []);
-
-      return (
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Link
-                className="w-full rounded-sm focus:outline-none focus:ring-1 focus:ring-ring"
-                href={row.original.id.toString()}
-              >
-                <div
-                  ref={textElementRef}
-                  className="w-[225px] sm:w-[350px] md:w-[465px] overflow-hidden whitespace-nowrap text-ellipsis"
-                >
-                  {row.original.title}
-                </div>
-              </Link>
-            </TooltipTrigger>
-            {isOverflowed && (
-              <TooltipContent>{row.original.title}</TooltipContent>
-            )}
-          </Tooltip>
-        </TooltipProvider>
-      );
-    },
+    cell: ({ row }) => (
+      <TruncateTooltip className="max-w-[400px]" text={row.original.title} />
+    ),
   },
   {
     accessorKey: 'completed',
-    header: () => <div className="text-right">Completed</div>,
-    cell: ({ row }) => {
-      const completed = row.original.completed;
-
+    header: () => <div className="text-center">Done</div>,
+    cell: ({ row }) => <Completed row={row} />,
+  },
+  {
+    accessorKey: '',
+    header: 'Remove',
+    cell: () => {
       return (
-        <div className="flex justify-end font-medium">
-          {completed ? <Check /> : <X />}
-        </div>
+        <Button size="icon" variant="ghost">
+          <X />
+        </Button>
       );
     },
   },
 ];
+
+function Completed({ row }: { row: Row<Todo> }) {
+  const completed = row.original.completed;
+  const [isCompleted, setIsCompleted] = React.useState(completed);
+
+  return (
+    <div className="flex justify-center text-center">
+      <Checkbox
+        checked={isCompleted}
+        onCheckedChange={() => setIsCompleted((prev) => !prev)}
+        className="pr-0"
+      />
+    </div>
+  );
+}
