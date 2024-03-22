@@ -1,4 +1,4 @@
-import { ThemeToggle } from '@placeholder/ui-kit/ui';
+import { TailwindIndicator, ThemeToggle } from '@placeholder/ui-kit/ui';
 import Link from 'next/link';
 
 export const LayoutHeader = () => {
@@ -12,7 +12,10 @@ export const LayoutHeader = () => {
           <h1 className="text-lg font-semibold">JSON Placeholder App</h1>
         </Link>
 
-        <ThemeToggle />
+        <div className="flex items-center justify-between gap-3">
+          <TailwindIndicator />
+          <ThemeToggle />
+        </div>
       </nav>
     </div>
   );
