@@ -1,16 +1,5 @@
-import {
-  Book,
-  CheckCheck,
-  Grid,
-  LayoutDashboard,
-  LucideIcon,
-} from 'lucide-react';
-
-export interface NavItem {
-  title: string;
-  href: string;
-  icon: LucideIcon;
-}
+import { NavItem } from '@placeholder/shared/feature/layout';
+import { Book, CheckCheck, Grid, LayoutDashboard } from 'lucide-react';
 
 export const NAV_ITEMS: NavItem[] = [
   {

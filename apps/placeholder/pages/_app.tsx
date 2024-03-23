@@ -9,6 +9,7 @@ import { PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 
 import { bindDependencies } from '../lib/bind-dependencies';
+import { NAV_ITEMS } from '../lib/nav-items';
 import { store } from '../lib/store';
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -19,7 +20,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to placeholder!</title>
       </Head>
       <Providers>
-        <LayoutFeature>
+        <LayoutFeature navItems={NAV_ITEMS}>
           <Component {...pageProps} />
         </LayoutFeature>
       </Providers>

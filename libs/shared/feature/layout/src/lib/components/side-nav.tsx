@@ -2,17 +2,22 @@ import { buttonVariants } from '@placeholder/ui-kit/ui';
 import { cn } from '@placeholder/ui-kit/util';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import React from 'react';
 
-import { NAV_ITEMS } from '../constants/nav-items';
 import { useLayout } from '../context/layout.context';
+import { NavItem } from '../layout';
 
-export const LayoutSideNav = () => {
+interface LayoutSideNavProps {
+  navItems: NavItem[];
+}
+
+export const LayoutSideNav: React.FC<LayoutSideNavProps> = ({ navItems }) => {
   const path = usePathname();
   const { isSidebarOpen } = useLayout();
 
   return (
     <nav className="space-y-2">
-      {NAV_ITEMS.map((item) => (
+      {navItems.map((item) => (
         <Link
           key={item.title}
           href={item.href}
