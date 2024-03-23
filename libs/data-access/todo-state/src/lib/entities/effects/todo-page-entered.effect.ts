@@ -1,4 +1,4 @@
-import { diContainer } from '@placeholder/core/dependency-injection';
+import { diContainer } from '@placeholder/core/util/dependency-injection';
 import {
   ITodoRepository,
   TODO_REPOSITORY_TOKEN,

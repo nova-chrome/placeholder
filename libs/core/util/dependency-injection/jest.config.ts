@@ -1,11 +1,11 @@
 /* eslint-disable */
 export default {
-  displayName: 'core-dependency-injection',
-  preset: '../../../jest.preset.js',
+  displayName: 'dependency-injection',
+  preset: '../../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/libs/core/dependency-injection',
+  coverageDirectory: '../../../../coverage/libs/core/util/dependency-injection',
 };

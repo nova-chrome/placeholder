@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@placeholder/core/dependency-injection": [
-        "libs/core/dependency-injection/src/index.ts"
+      "@placeholder/core/util/dependency-injection": [
+        "libs/core/util/dependency-injection/src/index.ts"
       ],
       "@placeholder/data-access/todo-infrastructure": [
         "libs/data-access/todo-infrastructure/src/index.ts"
