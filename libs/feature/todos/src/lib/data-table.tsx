@@ -1,4 +1,7 @@
-import { todoUiActions } from '@placeholder/data-access/todo-state';
+import {
+  todoSelectors,
+  todoUiActions,
+} from '@placeholder/data-access/todo-state';
 import {
   Card,
   CardContent,
@@ -17,7 +20,6 @@ import {
   TableRow,
 } from '@placeholder/ui-kit/ui';
 import {
-  ColumnDef,
   ColumnFiltersState,
   flexRender,
   getCoreRowModel,
@@ -28,20 +30,16 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-  total?: number;
-}
+import { COLUMNS as columns } from './columns';
 
-export function DataTable<TData, TValue>({
-  columns,
-  data,
-  total,
-}: DataTableProps<TData, TValue>) {
+export function DataTable() {
   const dispatch = useDispatch();
+
+  const data = useSelector(todoSelectors.selectAll);
+  const total = useSelector(todoSelectors.selectTotal);
+
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -52,15 +50,17 @@ export function DataTable<TData, TValue>({
     pageSize: 10,
   });
 
+  const pagedData = data.slice(
+    pagination.pageIndex * pagination.pageSize,
+    (pagination.pageIndex + 1) * pagination.pageSize
+  );
+
   const table = useReactTable({
-    data: data.slice(
-      pagination.pageIndex * pagination.pageSize,
-      (pagination.pageIndex + 1) * pagination.pageSize
-    ),
+    data: pagedData,
     columns,
-    pageCount: Math.ceil((total ?? data.length) / pagination.pageSize),
     manualPagination: true,
     rowCount: total ?? data.length,
+    pageCount: Math.ceil((total ?? data.length) / pagination.pageSize),
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
@@ -149,8 +149,8 @@ export function DataTable<TData, TValue>({
               )}
             </TableBody>
           </Table>
-          <ScrollBar orientation="horizontal" />
           <ScrollBar orientation="vertical" />
+          <ScrollBar orientation="horizontal" />
         </ScrollArea>
       </CardContent>
       <CardFooter className="flex items-center justify-end py-4 space-x-2">
