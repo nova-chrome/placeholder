@@ -5,6 +5,7 @@ import {
   DataTableColumnHeader,
   TruncateTooltip,
 } from '@placeholder/ui-kit/ui';
+import { cn } from '@placeholder/ui-kit/util';
 import { ColumnDef, Row } from '@tanstack/react-table';
 import { X } from 'lucide-react';
 import React from 'react';
@@ -21,7 +22,13 @@ export const COLUMNS: ColumnDef<Todo>[] = [
       <DataTableColumnHeader column={column} title="Title" />
     ),
     cell: ({ row }) => (
-      <TruncateTooltip className="max-w-[400px]" text={row.original.title} />
+      <TruncateTooltip
+        className={cn(
+          'max-w-[400px]',
+          row.original.completed && 'line-through'
+        )}
+        text={row.original.title}
+      />
     ),
   },
   {
