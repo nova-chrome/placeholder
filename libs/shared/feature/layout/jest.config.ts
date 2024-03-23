@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: 'feature-layout',
-  preset: '../../../jest.preset.js',
+  displayName: 'shared-feature-layout',
+  preset: '../../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': [
       '@swc/jest',
@@ -14,5 +14,5 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/feature/layout',
+  coverageDirectory: '../../../../coverage/libs/shared/feature/layout',
 };

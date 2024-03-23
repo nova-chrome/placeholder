@@ -1,7 +1,7 @@
 import './styles.css';
 import 'reflect-metadata';
 
-import { LayoutFeature } from '@placeholder/feature/layout';
+import { LayoutFeature } from '@placeholder/shared/feature/layout';
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import Head from 'next/head';

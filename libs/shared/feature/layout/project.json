@@ -1,0 +1,9 @@
+{
+  "name": "shared-feature-layout",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/feature/layout/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project shared-feature-layout --web",
+  "targets": {}
+}
