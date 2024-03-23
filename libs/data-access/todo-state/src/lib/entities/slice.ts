@@ -1,4 +1,5 @@
 import { Todo } from '@placeholder/model/todo';
+import { CallState, LoadingState } from '@placeholder/shared/model/call-state';
 import {
   createEntityAdapter,
   createSlice,
@@ -9,7 +10,6 @@ import {
 
 import * as TodoApiActions from './actions/api.actions';
 import * as TodoUiActions from './actions/ui.actions';
-import { CallState, LoadingState } from './call-state';
 
 export interface TodoState extends EntityState<Todo, number> {
   callState: CallState;
