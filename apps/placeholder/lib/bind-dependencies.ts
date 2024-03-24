@@ -2,7 +2,7 @@ import { diContainer } from '@placeholder/core/util/dependency-injection';
 import {
   TodoRepositoryApiStrategy,
   TodoRepositoryService,
-} from '@placeholder/data-access/todo-infrastructure';
+} from '@placeholder/todo/data-access/todo-infrastructure';
 import { TODO_REPOSITORY_TOKEN } from '@placeholder/todo/model/todo';
 
 export function bindDependencies() {
