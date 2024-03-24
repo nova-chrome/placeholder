@@ -1,5 +1,7 @@
 import { LucideIcon } from 'lucide-react';
+import { useRouter } from 'next/router';
 import React from 'react';
+import { useHotkeys } from 'react-hotkeys-hook';
 
 import { LayoutHeader } from './components/header';
 import { LayoutSideBar } from './components/side-bar';
@@ -19,6 +21,11 @@ interface LayoutFeatureProps {
 export const LayoutFeature: React.FC<
   React.PropsWithChildren<LayoutFeatureProps>
 > = ({ children, navItems }) => {
+  const { push } = useRouter();
+  useHotkeys('meta+1,control+shift+1,control+1', () => push('/'));
+  useHotkeys('meta+2,control+shift+2,control+2', () => push('/todos'));
+  useHotkeys('meta+3,control+shift+3,control+3', () => push('/posts'));
+  useHotkeys('meta+4,control+shift+4,control+4', () => push('/albums'));
   return (
     <LayoutProvider>
       <LayoutHeader />
