@@ -8,7 +8,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: '/',
   },
   {
-    title: 'Todo',
+    title: 'Todos',
     icon: CheckCheck,
     href: '/todos',
   },
