@@ -38,6 +38,7 @@ export function DataTable() {
   const dispatch = useDispatch();
 
   const data = useSelector(todoSelectors.selectAll);
+  const callStatus = useSelector(todoSelectors.selectCallStatus);
   const total = useSelector(todoSelectors.selectTotal);
 
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -143,7 +144,7 @@ export function DataTable() {
                     colSpan={columns.length}
                     className="h-24 text-center"
                   >
-                    No results.
+                    {callStatus.loading ? 'Loading...' : 'No results.'}
                   </TableCell>
                 </TableRow>
               )}
