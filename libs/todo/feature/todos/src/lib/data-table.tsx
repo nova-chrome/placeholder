@@ -1,7 +1,7 @@
 import {
   todoSelectors,
   todoUiActions,
-} from '@placeholder/data-access/todo-state';
+} from '@placeholder/todo/data-access/todo-state';
 import {
   Card,
   CardContent,

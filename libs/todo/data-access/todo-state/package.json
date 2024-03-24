@@ -1,5 +1,5 @@
 {
-  "name": "@placeholder/data-access/todo-state",
+  "name": "@placeholder/todo/data-access/todo-state",
   "version": "0.0.1",
   "dependencies": {
     "tslib": "^2.3.0"

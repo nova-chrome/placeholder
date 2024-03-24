@@ -1,4 +1,7 @@
-import { todoEffects, todoSlice } from '@placeholder/data-access/todo-state';
+import {
+  todoEffects,
+  todoSlice,
+} from '@placeholder/todo/data-access/todo-state';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import { all, call } from 'redux-saga/effects';
