@@ -3,7 +3,7 @@ import {
   TodoRepositoryApiStrategy,
   TodoRepositoryService,
 } from '@placeholder/todo/data-access/todo-infrastructure';
-import { TODO_REPOSITORY_TOKEN } from '@placeholder/todo/model/todo';
+import { TODO_REPOSITORY_TOKEN } from '@placeholder/todo/model';
 
 export function bindDependencies() {
   diContainer.unbindAll();

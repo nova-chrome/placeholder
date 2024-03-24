@@ -1,11 +1,11 @@
 /* eslint-disable */
 export default {
-  displayName: 'todo-model-todo',
-  preset: '../../../../jest.preset.js',
+  displayName: 'todo-model',
+  preset: '../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../../coverage/libs/todo/model/todo',
+  coverageDirectory: '../../../coverage/libs/todo/model',
 };

@@ -1,4 +1,4 @@
-import { FindAllResponse } from '@placeholder/todo/model/todo';
+import { FindAllResponse } from '@placeholder/todo/model';
 import { createAction } from '@reduxjs/toolkit';
 
 export const todoPageDataFetchedSuccess = createAction<FindAllResponse>(

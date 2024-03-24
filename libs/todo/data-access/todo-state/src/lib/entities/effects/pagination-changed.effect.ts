@@ -2,7 +2,7 @@ import { diContainer } from '@placeholder/core/util/dependency-injection';
 import {
   ITodoRepository,
   TODO_REPOSITORY_TOKEN,
-} from '@placeholder/todo/model/todo';
+} from '@placeholder/todo/model';
 import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { todoTablePaginationChangedSuccess } from '../actions/api.actions';
