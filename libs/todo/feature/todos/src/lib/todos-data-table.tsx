@@ -34,7 +34,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { COLUMNS as columns } from './columns';
 
-export function DataTable() {
+export const TodosDataTable = () => {
   const dispatch = useDispatch();
 
   const data = useSelector(todoSelectors.selectAll);
@@ -159,4 +159,4 @@ export function DataTable() {
       </CardFooter>
     </Card>
   );
-}
+};

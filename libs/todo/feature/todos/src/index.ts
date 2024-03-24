@@ -1,1 +1,1 @@
-export { TodoFeature } from './lib/todos';
+export { TodosFeature as TodoFeature } from './lib/todos-feature';
