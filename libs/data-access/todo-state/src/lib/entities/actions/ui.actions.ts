@@ -1,4 +1,4 @@
-import { FindAllTodosRequestParams } from '@placeholder/model/todo';
+import { FindAllTodosRequestParams } from '@placeholder/todo/model/todo';
 import { createAction } from '@reduxjs/toolkit';
 
 export const todoPageEntered = createAction<FindAllTodosRequestParams>(

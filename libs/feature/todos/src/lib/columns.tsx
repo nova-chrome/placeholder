@@ -1,4 +1,4 @@
-import { Todo } from '@placeholder/model/todo';
+import { Todo } from '@placeholder/todo/model/todo';
 import {
   Button,
   Checkbox,

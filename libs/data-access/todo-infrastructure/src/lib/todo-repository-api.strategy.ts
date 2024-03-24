@@ -3,7 +3,7 @@ import {
   FindAllTodosRequestApiParams,
   FindAllTodosRequestParams,
   ITodoRepository,
-} from '@placeholder/model/todo';
+} from '@placeholder/todo/model/todo';
 
 import { TodoRepositoryService } from './todo-repository.service';
 
