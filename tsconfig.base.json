@@ -27,7 +27,6 @@
       "@placeholder/feature/layout/server": [
         "libs/feature/layout/src/server.ts"
       ],
-      "@placeholder/feature/todos": ["libs/feature/todos/src/index.ts"],
       "@placeholder/feature/todos/server": ["libs/feature/todos/src/server.ts"],
       "@placeholder/shared/feature/layout": [
         "libs/shared/feature/layout/src/index.ts"
@@ -36,6 +35,9 @@
         "libs/shared/model/call-state/src/index.ts"
       ],
       "@placeholder/shared/util/react": ["libs/shared/util/react/src/index.ts"],
+      "@placeholder/todo/feature/todos": [
+        "libs/todo/feature/todos/src/index.ts"
+      ],
       "@placeholder/todo/model/todo": ["libs/todo/model/todo/src/index.ts"],
       "@placeholder/ui-kit/ui": ["libs/ui-kit/ui/src/index.ts"],
       "@placeholder/ui-kit/util": ["libs/ui-kit/util/src/index.ts"]
