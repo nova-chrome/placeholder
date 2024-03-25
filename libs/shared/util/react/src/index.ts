@@ -1,1 +1,4 @@
-export { buildProvidersTree, ProviderType } from './lib/build-providers-tree';
+export {
+  buildProvidersTree,
+  type ProviderType,
+} from './lib/build-providers-tree';

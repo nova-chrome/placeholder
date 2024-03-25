@@ -1,2 +1,2 @@
-export { LayoutFeature, NavItem } from './lib/layout';
-export { LayoutState, useLayout } from './lib/context/layout.context';
+export { LayoutFeature, type NavItem } from './lib/layout';
+export { type LayoutState, useLayout } from './lib/context/layout.context';
