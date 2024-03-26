@@ -1,0 +1,19 @@
+{
+  "name": "placeholder-todo-data-access-todo-state",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/placeholder/todo/data-access/todo-state/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/placeholder/todo/data-access/todo-state",
+        "main": "libs/placeholder/todo/data-access/todo-state/src/index.ts",
+        "tsConfig": "libs/placeholder/todo/data-access/todo-state/tsconfig.lib.json",
+        "assets": ["libs/placeholder/todo/data-access/todo-state/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

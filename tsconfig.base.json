@@ -21,6 +21,9 @@
       "@placeholder/placeholder/todo/data-access/todo-infrastructure": [
         "libs/placeholder/todo/data-access/todo-infrastructure/src/index.ts"
       ],
+      "@placeholder/placeholder/todo/data-access/todo-state": [
+        "libs/placeholder/todo/data-access/todo-state/src/index.ts"
+      ],
       "@placeholder/placeholder/todo/feature/todos": [
         "libs/placeholder/todo/feature/todos/src/index.ts"
       ],
@@ -34,9 +37,6 @@
         "libs/shared/model/call-state/src/index.ts"
       ],
       "@placeholder/shared/util/react": ["libs/shared/util/react/src/index.ts"],
-      "@placeholder/todo/data-access/todo-state": [
-        "libs/todo/data-access/todo-state/src/index.ts"
-      ],
       "@placeholder/ui-kit/ui": ["libs/ui-kit/ui/src/index.ts"],
       "@placeholder/ui-kit/util": ["libs/ui-kit/util/src/index.ts"]
     }
