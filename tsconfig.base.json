@@ -18,6 +18,9 @@
       "@placeholder/core/util/dependency-injection": [
         "libs/core/util/dependency-injection/src/index.ts"
       ],
+      "@placeholder/placeholder/todo/feature/todos": [
+        "libs/placeholder/todo/feature/todos/src/index.ts"
+      ],
       "@placeholder/shared/feature/layout": [
         "libs/shared/feature/layout/src/index.ts"
       ],
@@ -30,9 +33,6 @@
       ],
       "@placeholder/todo/data-access/todo-state": [
         "libs/todo/data-access/todo-state/src/index.ts"
-      ],
-      "@placeholder/todo/feature/todos": [
-        "libs/todo/feature/todos/src/index.ts"
       ],
       "@placeholder/todo/model": ["libs/todo/model/src/index.ts"],
       "@placeholder/ui-kit/ui": ["libs/ui-kit/ui/src/index.ts"],

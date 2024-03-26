@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: 'todo-feature-todos',
-  preset: '../../../../jest.preset.js',
+  displayName: 'placeholder-todo-feature-todos',
+  preset: '../../../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': [
       '@swc/jest',
@@ -14,5 +14,6 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../../coverage/libs/todo/feature/todos',
+  coverageDirectory:
+    '../../../../../coverage/libs/placeholder/todo/feature/todos',
 };
