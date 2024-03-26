@@ -1,0 +1,19 @@
+{
+  "name": "placeholder-todo-model",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/placeholder/todo/model/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/placeholder/todo/model",
+        "main": "libs/placeholder/todo/model/src/index.ts",
+        "tsConfig": "libs/placeholder/todo/model/tsconfig.lib.json",
+        "assets": ["libs/placeholder/todo/model/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

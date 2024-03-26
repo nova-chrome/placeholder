@@ -2,7 +2,7 @@ import {
   FindAllResponse,
   FindAllTodosRequestApiParams,
   Todo,
-} from '@placeholder/todo/model';
+} from '@placeholder/placeholder/todo/model';
 import axios, { AxiosInstance } from 'axios';
 
 export class TodoRepositoryService {

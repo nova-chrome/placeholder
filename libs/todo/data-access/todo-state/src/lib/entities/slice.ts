@@ -1,4 +1,4 @@
-import { Todo } from '@placeholder/todo/model';
+import { Todo } from '@placeholder/placeholder/todo/model';
 import { CallState, LoadingState } from '@placeholder/shared/model/call-state';
 import {
   createEntityAdapter,
